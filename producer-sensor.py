@@ -5,7 +5,7 @@ import time
 import random
 import json
 
-producer = KafkaProducer(value_serializer=lambda v: json.dumps(v).encode('utf-8'), bootstrap_servers='localhost:9092')
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
 def get_time_date():
     utc_now = pytz.utc.localize(datetime.datetime.utcnow())
@@ -64,5 +64,5 @@ while True:
         'QUEUE_STATUS': qs,
     }
 
-    producer.send('test', new_data_1)
-    time.sleep(5)
+    producer.send('farmers', json.dumps(new_data_1).encode('utf-8'))
+    time.sleep(3)
