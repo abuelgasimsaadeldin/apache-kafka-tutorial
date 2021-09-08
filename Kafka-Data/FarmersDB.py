@@ -70,6 +70,6 @@ data = [("Jordan", "0162360942", "jordan@gmail.com", "Penang", "jordanfarm", "wh
 mycursor.execute("SELECT * FROM farmers")
 
 # mycursor.execute("SHOW TABLES")
-#
+
 for x in mycursor:
     print(x)
