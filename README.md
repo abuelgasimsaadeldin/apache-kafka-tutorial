@@ -45,7 +45,9 @@ In order to use Kafka with Python you need to first install kafka-python, to do 
 ```
 pip install kafka-python
 ```
+<br />
 
+**Note: Before sending any messages to Kafka servers, make sure to first start your Kafka cluster!**
 ### Send String Data to Kafka Server:
 To send a string data to the Kafka Server using Python run the following script:
 ```
@@ -53,8 +55,25 @@ python producer.py
 ```
 
 ### Send SensorIOT Data to Kafka Server:
-To send a continuous dummy real-time IOT sensors data into Kafka run the following script:
+To send a continuous dummy real-time IOT sensors data to the Kafka server run the following script:
 ```
-python producer-sensor
+python producer-sensor.py
 ```
 
+### Send CSV Data to Kafka Server:
+To send CSV data to the kafka server line by line run the following script:
+```
+python producer-csv.py
+```
+
+### Send MySQL Database to Kafka Server:
+To send a MySQL Database to the Kafka Server run the following script:
+```
+python producer-mysql.py
+```
+
+### Consume Messages from Kafka Server:
+To consume messages from a Kafka server in python for a specific topic run the following script:
+```
+python consumer.py
+```
