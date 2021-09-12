@@ -1,10 +1,10 @@
 from kafka import KafkaConsumer
 
 consumer = KafkaConsumer(
-    'farmers',
+    'farm',
     bootstrap_servers='localhost:9092',
     auto_offset_reset='earliest',
-    group_id='farmers-consumer-group'
+    group_id='farm-consumer-group'
 )
 
 for message in consumer:

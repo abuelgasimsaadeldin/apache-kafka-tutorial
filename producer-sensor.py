@@ -5,8 +5,11 @@ import time
 import random
 import json
 
+# Start up Kafka producer
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
+
+# Get real-time date and time
 def get_time_date():
     utc_now = pytz.utc.localize(datetime.datetime.utcnow())
     pst_now = utc_now.astimezone(pytz.timezone("Asia/Kuala_Lumpur"))
@@ -15,6 +18,8 @@ def get_time_date():
 
     return d, t
 
+
+# Get random sensor data
 def get_sensor_data():
     sensor_1 = random.choice([True, False])
     sensor_2 = random.choice([True, False])
@@ -64,5 +69,7 @@ while True:
         'QUEUE_STATUS': qs,
     }
 
-    producer.send('farmers', json.dumps(new_data_1).encode('utf-8'))
+    # Send the real-time sensor data to the Kafka topic 'farm'
+    producer.send('farm', json.dumps(new_data_1).encode('utf-8'))
+    print(new_data_1)
     time.sleep(3)
