@@ -1,5 +1,6 @@
 import mysql.connector
 
+# Establish a connection with the MySQL Database
 db = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -73,3 +74,4 @@ mycursor.execute("SELECT * FROM farmers")
 
 for x in mycursor:
     print(x)
+    
