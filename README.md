@@ -1,4 +1,4 @@
-# Apache Kafka tutorial
+# Apache Kafka tutorial.
 
 Apache Kafka is a distributed publish-subscribe messaging system developed by LinkedIn and written in Scala and Java.
 
